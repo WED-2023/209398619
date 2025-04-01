@@ -1,153 +1,93 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>האתר שלי</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding-top: 70px;
-        }
-        
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #f32187;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        .logo {
-            height: 40px;
-            margin-right: 15px;
-        }
-        
-        .nav-links {
-            display: flex;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 70px;
+}
 
-        /* קוד עבור #menu */
-        #menu {
-            position: fixed;
-            width: 100%;
-            height: 35px;
-            background: white;
-            top: 0;
-            left: 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f32187;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
 
-        .section {
-            min-height: 100vh;
-            padding: 20px;
-            text-align: center;
-        }
+.logo {
+    height: 40px;
+    margin-right: 15px;
+}
 
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: rgba(255,255,255,0.8);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        
-        #photos .content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-        }
-        
-        #photos .content img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        #photos .content img:hover {
-            transform: scale(1.05);
-        }
-        
-        @media (max-width: 768px) {
-            #photos .content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            #photos .content {
-                grid-template-columns: 1fr;
-            }
-        }
+.nav-links {
+    display: flex;
+}
 
-        #contact form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        #contact input, 
-        #contact textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
 
-    <!-- הוספת ה-navbar -->
-    <div class="navbar">
-        <img src="logo.png" alt="לוגו" class="logo">
-        <div class="nav-links">
-            <a href="#home">בית</a>
-            <a href="#photos">תמונות</a>
-            <a href="#contact">צור קשר</a>
-        </div>
-    </div>
+.section {
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
 
-    <!-- הוספת ה-menu -->
-    <div id="menu"></div>
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
 
-    <div id="home" class="section">
-        <h1>ברוך הבא לאתר שלי!</h1>
-        <p>הדף הזה מציג את האתר שלי עם קישורים לתמונות ויצירת קשר.</p>
-    </div>
+#photos .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+}
 
-    <div id="photos" class="section">
-        <h2>תמונות</h2>
-        <div class="content">
-            <img src="photo1.jpg" alt="תמונה 1">
-            <img src="photo2.jpg" alt="תמונה 2">
-            <img src="photo3.jpg" alt="תמונה 3">
-        </div>
-    </div>
+#photos .content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
 
-    <div id="contact" class="section">
-        <h2>צור קשר</h2>
-        <form>
-            <input type="text" placeholder="שם מלא" required>
-            <input type="email" placeholder="אימייל" required>
-            <textarea placeholder="הודעה" required></textarea>
-            <button type="submit">שלח</button>
-        </form>
-    </div>
+#photos .content img:hover {
+    transform: scale(1.05);
+}
 
-</body>
-</html>
+@media (max-width: 768px) {
+    #photos .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #photos .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact input, 
+#contact textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

@@ -18,14 +18,14 @@ body {
 
 .logo {
     height: 40px;
-    margin-left: 15px; /* Changed from margin-right to margin-left */
-    order: 2; /* Makes the logo appear on the left in RTL */
+    margin-left: 15px; 
+    order: 2; 
 }
 
 .nav-links {
     display: flex;
-    justify-content: center; /* Centers the nav links */
-    flex-grow: 1; /* Allows the nav to take up available space */
+    justify-content: center;
+    flex-grow: 1; 
 }
 
 .nav-links a {
@@ -288,3 +288,41 @@ body {
     background-color: #d31b76;
 }
 
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input, 
+#contact textarea, 
+#contact select {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact button {
+    background-color: #f32187;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #d31b76;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #contact form {
+        max-width: 90%;
+    }
+}

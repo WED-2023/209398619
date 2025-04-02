@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>האתר של סבתא רינה</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for share icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="navbar">
         <img src="images/logo.jpg" alt="לוגו האתר" class="logo">
         <div class="nav-links">
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">Contact Me</a><span class="nav-separator">|</span>
             <a href="#qa">Q&A</a><span class="nav-separator">|</span>
             <a href="#qr">QR Code</a><span class="nav-separator">|</span>
             <a href="#like">Like</a><span class="nav-separator">|</span>
@@ -94,16 +93,37 @@
     
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
             
-            <iframe 
-                width="560" 
-                height="315" 
-                src="https://www.youtube.com/embed/6AU-cjJ_-4A" 
-                title="YouTube video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="margin-top: 20px;">
-            </iframe>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 20px;">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/ni5zFEj7FFg?list=PLUFHSF7zKGMutOiQfwU3K2LytQBY8a_hw" 
+                    title="YouTube video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+    
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/TZxqzG0_fKo?list=PLUFHSF7zKGMutOiQfwU3K2LytQBY8a_hw" 
+                    title="YouTube video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+    
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/gP6PS-poyMg?list=PLUFHSF7zKGMutOiQfwU3K2LytQBY8a_hw" 
+                    title="YouTube video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
 
@@ -227,12 +247,27 @@
                 <h2>Contact Me</h2>
             </div>
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
-    
-            <form style="margin-top: 20px;">
-                <input type="text" placeholder="שם" required>
-                <input type="email" placeholder="אימייל" required>
-                <textarea placeholder="הודעה" required></textarea>
-                <button type="submit">שלח</button>
+        
+            <form action="mailto:your-email@example.com" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+                <label for="email">המייל שלך:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <label for="message">גוף ההודעה:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+                <label for="smiley">בחר סמיילי:</label><br>
+                <select id="smiley" name="smiley">
+                    <option value=":)">😊</option>
+                    <option value=":D">😁</option>
+                    <option value=":(">😞</option>
+                    <option value=";)">😉</option>
+                    <option value=":P">😜</option>
+                    <option value=":|">😐</option>
+                    <option value=":O">😮</option>
+                    <option value=":">😃</option>
+                </select><br><br>
+        
+                <input type="submit" value="שלח">
             </form>
         </div>
     </div>
@@ -258,6 +293,18 @@
                 alert('שיתוף לא נתמך בדפדפן זה. אנא העתק את כתובת האתר ידנית.');
             }
         }
+
+        function validateForm() {
+        const category = document.getElementById("category");
+        const message = document.getElementById("message");
+        message.value = "קטגוריה: " + category.options[category.selectedIndex].text + "\n\n" + message.value;
+        if (document.getElementById("email").value == "") {
+            alert("הכנס את המייל שלך.");
+            return false;
+        }
+
+        return true;
+    }
     </script>
 </body>
 </html>

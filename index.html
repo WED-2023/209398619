@@ -2,21 +2,29 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>האתר שלי</title>
+    <title>האתר של סבתא רינה</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for share icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="navbar">
         <img src="images/logo.jpg" alt="לוגו האתר" class="logo">
         <div class="nav-links">
             <a href="#contact">Contact Me</a>
-            <a href="#qa">Q&A</a>
-            <a href="#qr">QR Code</a>
-            <a href="#like">Like</a>
-            <a href="#playlist">My Playlist</a>
-            <a href="#photos">My Photos</a>
-            <a href="#about">About Me</a>
+            <a href="#qa">Q&A</a><span class="nav-separator">|</span>
+            <a href="#qr">QR Code</a><span class="nav-separator">|</span>
+            <a href="#like">Like</a><span class="nav-separator">|</span>
+            <a href="#playlist">My Playlist</a><span class="nav-separator">|</span>
+            <a href="#photos">My Photos</a><span class="nav-separator">|</span>
+            <a href="#about">About Me</a><span class="nav-separator">|</span>    
         </div>
+    </div>
+    
+    <h1 class="site-title">Grandma Rina Scher's website</h1>
+    
+    <div class="header-image-container">
+        <img src="images/7.JPG" alt="תמונת כותרת" class="header-image">
     </div>
 
     <div id="about" class="section">
@@ -68,10 +76,11 @@
             <img src="images/4.jpg" alt="תמונה 4">
             <img src="images/5.jpg" alt="תמונה 5">
             <img src="images/6.JPG" alt="תמונה 6">
-            <img src="images/7.JPG" alt="תמונה 7">
+            <img src="images/11.JPG" alt="תמונה 7">
             <img src="images/8.jpg" alt="תמונה 8">
             <img src="images/9.JPG" alt="תמונה 9">
             <img src="images/10.jpg" alt="תמונה 10">
+            <img src="images/12.JPG" alt="תמונה 11">
         </div>
     </div>
 
@@ -108,7 +117,16 @@
         
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
     
-            <button onclick="likePage()" style="margin-top: 20px;">אהבתי!</button> 
+            <p class="like-message">נשמח שתתנו לייק אם אהבתם את האתר שלנו ❤️</p>
+            
+            <div class="like-share-container">
+                <button onclick="likePage()" class="action-button like-button">
+                    <i class="fas fa-heart"></i> אהבתי!
+                </button>
+                <button onclick="sharePage()" class="action-button share-button">
+                    <i class="fas fa-share-alt"></i> שתף
+                </button>
+            </div>
             <p id="likeCount">0 לייקים</p>
         </div>
     </div>
@@ -122,6 +140,7 @@
             </div>
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
           
+            <p class="qr-message">סרקו את הברקוד כדי לבקר באתר שלנו <3</p>
             <img src="images/QA.png" alt="QR קוד" style="margin-top: 20px;">
         </div>
     </div>
@@ -135,30 +154,40 @@
             </div>
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
           
-            <h3>שלושה הבדלים עיקריים בין Web 1.0, Web 2.0 ו-Web 3.0</h3>
-            
-            <h4>1. רמת האינטראקטיביות והמשתמשים בתהליך יצירת התוכן</h4>
-            <ul>
-                <li><strong>Web 1.0</strong>: אתרים סטטיים ללא תגובות וללא אפשרות למשתמשים ליצור תוכן.</li>
-                <li><strong>Web 2.0</strong>: מאפשר למשתמשים לשתף מידע וליצור תוכן, כמו בוויקיפדיה ורשתות חברתיות.</li>
-                <li><strong>Web 3.0</strong>: שימוש בבינה מלאכותית, עיבוד שפה טבעית וסמנטיקה כדי לספק מידע מותאם אישית.</li>
-            </ul>
-
-            <h4>2. שיטת חיפוש מידע</h4>
-            <ul>
-                <li><strong>Web 1.0</strong>: חיפוש מתבצע על פי מילים מדויקות (למשל, יש לדעת את ה-URL של הדף מראש).</li>
-                <li><strong>Web 2.0</strong>: מאפשר חיפושים חכמים יותר על בסיס תוכן משותף והקשרים.</li>
-                <li><strong>Web 3.0</strong>: מאפשר חיפוש מבוסס AI, שיודע להבין את המשמעות של השאילתא ולתת תוצאות רלוונטיות יותר.</li>
-            </ul>
-
-            <h4>3. הפרדת צד שרת וצד לקוח</h4>
-            <ul>
-                <li><strong>Web 1.0</strong>: רוב הפעולות מתבצעות בצד השרת, עם חוסר דינמיות בצד הלקוח.</li>
-                <li><strong>Web 2.0</strong>: הפרדה בין צד שרת וצד לקוח, עם יותר דינמיות ושימוש ב-API-ים.</li>
-                <li><strong>Web 3.0</strong>: שימוש בטכנולוגיות מתקדמות כמו בלוקצ'יין ו-IoT, כך שהמידע לא תלוי בשרת מרכזי אחד אלא מבוזר.</li>
-            </ul>
-
-            <details>
+            <details class="use-case-details">
+                <summary>שלושה הבדלים עיקריים בין Web 1.0, Web 2.0 ו-Web 3.0</summary>
+                
+                <div class="web-comparison">
+                    <div class="web-card web-1">
+                        <h4>Web 1.0</h4>
+                        <div class="web-content">
+                            <p><strong>רמת האינטראקטיביות:</strong> אתרים סטטיים ללא תגובות וללא אפשרות למשתמשים ליצור תוכן.</p>
+                            <p><strong>שיטת חיפוש מידע:</strong> חיפוש מתבצע על פי מילים מדויקות (למשל, יש לדעת את ה-URL של הדף מראש).</p>
+                            <p><strong>הפרדת צד שרת וצד לקוח:</strong> רוב הפעולות מתבצעות בצד השרת, עם חוסר דינמיות בצד הלקוח.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="web-card web-2">
+                        <h4>Web 2.0</h4>
+                        <div class="web-content">
+                            <p><strong>רמת האינטראקטיביות:</strong> מאפשר למשתמשים לשתף מידע וליצור תוכן, כמו בוויקיפדיה ורשתות חברתיות.</p>
+                            <p><strong>שיטת חיפוש מידע:</strong> מאפשר חיפושים חכמים יותר על בסיס תוכן משותף והקשרים.</p>
+                            <p><strong>הפרדת צד שרת וצד לקוח:</strong> הפרדה בין צד שרת וצד לקוח, עם יותר דינמיות ושימוש ב-API-ים.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="web-card web-3">
+                        <h4>Web 3.0</h4>
+                        <div class="web-content">
+                            <p><strong>רמת האינטראקטיביות:</strong> שימוש בבינה מלאכותית, עיבוד שפה טבעית וסמנטיקה כדי לספק מידע מותאם אישית.</p>
+                            <p><strong>שיטת חיפוש מידע:</strong> מאפשר חיפוש מבוסס AI, שיודע להבין את המשמעות של השאילתא ולתת תוצאות רלוונטיות יותר.</p>
+                            <p><strong>הפרדת צד שרת וצד לקוח:</strong> שימוש בטכנולוגיות מתקדמות כמו בלוקצ'יין ו-IoT, כך שהמידע לא תלוי בשרת מרכזי אחד אלא מבוזר.</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+    
+            <details class="use-case-details">
                 <summary>תרחיש שימוש: רכישת ספר באינטרנט</summary>
                 
                 <h4>Web 1.0 – אתרי מידע סטטיים (1990-2000)</h4>
@@ -213,6 +242,21 @@
         function likePage() {
             likeCount++;
             document.getElementById('likeCount').textContent = `${likeCount} לייקים`;
+        }
+        
+        function sharePage() {
+            // Check if Web Share API is supported
+            if (navigator.share) {
+                navigator.share({
+                    title: 'האתר של סבתא רינה',
+                    text: 'בקרו באתר של סבתא רינה!',
+                    url: window.location.href
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing:', error));
+            } else {
+                alert('שיתוף לא נתמך בדפדפן זה. אנא העתק את כתובת האתר ידנית.');
+            }
         }
     </script>
 </body>

@@ -18,17 +18,52 @@ body {
 
 .logo {
     height: 40px;
-    margin-right: 15px;
+    margin-left: 15px; /* Changed from margin-right to margin-left */
+    order: 2; /* Makes the logo appear on the left in RTL */
 }
 
 .nav-links {
     display: flex;
+    justify-content: center; /* Centers the nav links */
+    flex-grow: 1; /* Allows the nav to take up available space */
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff000;
+}
+
+.nav-separator {
+    color: white;
+    margin: 0 5px;
+}
+
+.site-title {
+    text-align: center;
+    margin-top: 30px;
+    color: #f32187;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 40px 0;
+}
+
+.header-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .section {
@@ -43,6 +78,119 @@ body {
     background-color: rgba(255,255,255,0.8);
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.qr-message, .like-message {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #f32187;
+    font-weight: bold;
+}
+
+/* Web comparison styles */
+.web-comparison {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.web-card {
+    flex: 1 1 30%;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.web-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.web-1 {
+    background-color: #e6f7ff;
+    border-top: 5px solid #1890ff;
+}
+
+.web-2 {
+    background-color: #fff7e6;
+    border-top: 5px solid #fa8c16;
+}
+
+.web-3 {
+    background-color: #f6ffed;
+    border-top: 5px solid #52c41a;
+}
+
+.web-card h4 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.web-content p {
+    text-align: right;
+    margin: 10px 0;
+}
+
+/* Use case details */
+.use-case-details {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #f32187;
+}
+
+.use-case-details summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    color: #f32187;
+    font-size: 1.2rem;
+}
+
+.like-share-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.like-button {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+.share-button {
+    background-color: #4dabf7;
+    color: white;
+}
+
+.action-button:hover {
+    transform: scale(1.05);
+}
+
+.action-button i {
+    margin-right: 8px;
 }
 
 #photos .content {
@@ -69,11 +217,44 @@ body {
     #photos .content {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .web-comparison {
+        flex-direction: column;
+    }
+    
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
     #photos .content {
         grid-template-columns: 1fr;
+    }
+    
+    .header-image {
+        max-width: 95%;
+    }
+    
+    .site-title {
+        font-size: 1.8rem;
+    }
+    
+    .nav-separator {
+        display: none;
+    }
+    
+    .nav-links a {
+        margin: 5px;
     }
 }
 
@@ -91,3 +272,19 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+#contact button {
+    background-color: #f32187;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #d31b76;
+}
+

@@ -39,7 +39,7 @@
     
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
             
-            <p>אני, רינה שר לבית שטיינמן, נולדתי ב-11/11/1935 בתל אביב.</p>
+            <p>אני, רנה שר לבית שטיינמן, נולדתי ב-11/11/1935 בתל אביב.</p>
             
             <p>סבי, שהיה בהכשרתו קבלן, בנה בניין ברחוב חשמונאים בתל אביב. הבנייה נמשכה זמן רב. מרבית המשפחה התגוררה בו, גם הורי, אחותי ואני גרנו שם. אנחנו גרנו בקומה הראשונה עם עוד שלוש משפחות, כשלכולנו היו שירותים משותפים ובמטבח בצד אחד בישלה אימי ובצד השני הדיירת הנוספת.</p>
             
@@ -251,6 +251,11 @@
                 <h2>Contact Me</h2>
             </div>
             <hr style="width: 100%; border: 1px solid #000; margin: 0;">
+            
+    
+            <div class="intro-message" style="text-align: center;">
+                השאירו הודעה בנוגע לכל נושא ואשמח לחזור אליכם בהקדם ❤️
+            </div>
         
             <form action="mailto:your-email@example.com" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                 <label for="email">המייל שלך:</label><br>
@@ -258,19 +263,30 @@
         
                 <label for="message">גוף ההודעה:</label><br>
                 <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                
+                <div id="emojis-container">
+                    <label>הוסף אימוג'י להודעה:</label><br>
+                    <div class="emoji-grid">
+                        <span class="emoji" onclick="addEmoji('😊')">😊</span>
+                        <span class="emoji" onclick="addEmoji('😁')">😁</span>
+                        <span class="emoji" onclick="addEmoji('😂')">😂</span>
+                        <span class="emoji" onclick="addEmoji('😍')">😍</span>
+                        <span class="emoji" onclick="addEmoji('🥰')">🥰</span>
+                        <span class="emoji" onclick="addEmoji('😎')">😎</span>
+                        <span class="emoji" onclick="addEmoji('🤩')">🤩</span>
+                        <span class="emoji" onclick="addEmoji('😇')">😇</span>
+                        <span class="emoji" onclick="addEmoji('🤗')">🤗</span>
+                        <span class="emoji" onclick="addEmoji('🤔')">🤔</span>
+                        <span class="emoji" onclick="addEmoji('🙄')">🙄</span>
+                        <span class="emoji" onclick="addEmoji('😮')">😮</span>
+                        <span class="emoji" onclick="addEmoji('😴')">😴</span>
+                        <span class="emoji" onclick="addEmoji('❤️')">❤️</span>
+                        <span class="emoji" onclick="addEmoji('🙏')">🙏</span>
+                        <span class="emoji" onclick="addEmoji('👍')">👍</span>
+                    </div>
+                </div><br>
         
-                <label for="smiley">בחר סמיילי:</label><br>
-                <select id="smiley" name="smiley">
-                    <option value=":)">😊</option>
-                    <option value=":D">😁</option>
-                    <option value=":(">😞</option>
-                    <option value=";)">😉</option>
-                    <option value=":P">😜</option>
-                    <option value=":|">😐</option>
-                    <option value=":O">😮</option>
-                    <option value=":">😃</option>
-                </select><br><br>
-        
+                <input type="hidden" id="messageWithEmojis" name="messageWithEmojis">
                 <input type="submit" value="שלח">
             </form>
         </div>
@@ -298,6 +314,31 @@
             }
         }
 
+        function addEmoji(emoji) {
+        const messageTextarea = document.getElementById('message');
+        const cursorPos = messageTextarea.selectionStart;
+        const textBefore = messageTextarea.value.substring(0, cursorPos);
+        const textAfter = messageTextarea.value.substring(cursorPos);
+        messageTextarea.value = textBefore + emoji + textAfter;
+        
+        const newCursorPos = cursorPos + emoji.length;
+        messageTextarea.focus();
+        messageTextarea.setSelectionRange(newCursorPos, newCursorPos);
+    }
+    
+    function validateForm() {
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (!email || !message) {
+            alert('נא למלא את כל השדות הנדרשים');
+            return false;
+        }
+    
+        document.getElementById('messageWithEmojis').value = message;
+        
+        return true;
+    }
 
     </script>
 </body>

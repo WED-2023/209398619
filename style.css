@@ -8,7 +8,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #f32187;
+    background-color: #f32128;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -16,11 +16,96 @@ body {
     z-index: 1000;
 }
 
-.logo {
-    height: 40px;
-    margin-left: 15px; 
-    order: 2; 
+
+/* Navbar positioning */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f32128;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
+
+/* Logo container positioning and styling */
+.logo-container {
+    position: absolute;
+    top: 20px; /* Reduced from 30px to move logo higher */
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #f32128, #f32128);
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    z-index: 2000;
+    overflow: visible;
+}
+
+/* Heart decoration */
+.logo-container::before {
+    content: '♥';
+    position: absolute;
+    color: #f32128;
+    font-size: 20px;
+    top: -10px;
+    right: -5px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Dashed border decoration */
+.logo-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px dashed #f32128;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Logo image styling */
+.logo {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+    background-color: white;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    animation: pulse 2s ease infinite;
+}
+
+/* Logo hover effect */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Animation for the logo */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Adjust the nav links to be centered */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Adjust body padding to account for navbar and logo */
+body {
+    padding-top: 90px;
+}
+
 
 .nav-links {
     display: flex;
@@ -47,7 +132,7 @@ body {
 .site-title {
     text-align: center;
     margin-top: 30px;
-    color: #f32187;
+    color: #f32128;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
@@ -84,7 +169,7 @@ body {
 .qr-message, .like-message {
     margin: 20px 0;
     font-size: 1.2rem;
-    color: #f32187;
+    color: #f32128;
     font-weight: bold;
 }
 
@@ -144,14 +229,14 @@ body {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    border-left: 5px solid #f32187;
+    border-left: 5px solid #f32128;
 }
 
 .use-case-details summary {
     font-weight: bold;
     cursor: pointer;
     padding: 10px;
-    color: #f32187;
+    color: #f32128;
     font-size: 1.2rem;
 }
 
@@ -176,7 +261,7 @@ body {
 }
 
 .like-button {
-    background-color: #ff4d6d;
+    background-color: #f32128;
     color: white;
 }
 
@@ -274,7 +359,7 @@ body {
 }
 
 #contact button {
-    background-color: #f32187;
+    background-color: #f32128;
     color: white;
     border: none;
     padding: 10px;
@@ -285,7 +370,7 @@ body {
 }
 
 #contact button:hover {
-    background-color: #d31b76;
+    background-color: #f32128;
 }
 
     #contact form {
@@ -295,8 +380,6 @@ body {
         margin: 0 auto;
     }
 
-    #contact input, 
-    #contact textarea, 
     #contact select {
         margin-bottom: 10px;
         padding: 10px;
@@ -306,7 +389,7 @@ body {
     }
 
     #contact button {
-        background-color: #f32187;
+        background-color: #f32128;
         color: white;
         border: none;
         padding: 10px;

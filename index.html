@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="images/logo.jpg" alt="לוגו האתר" class="logo">
         <div class="nav-links">
             <a href="#contact">Contact Me</a><span class="nav-separator">|</span>
             <a href="#qa">Q&A</a><span class="nav-separator">|</span>
@@ -18,6 +17,10 @@
             <a href="#photos">My Photos</a><span class="nav-separator">|</span>
             <a href="#about">About Me</a><span class="nav-separator">|</span>    
         </div>
+    </div>
+
+    <div class="logo-container">
+        <img src="images/logo.jpg" alt="Grandma Rina Scher" class="logo">
     </div>
     
     <h1 class="site-title">Grandma Rina Scher's website</h1>
@@ -295,17 +298,7 @@
             }
         }
 
-        function validateForm() {
-        const category = document.getElementById("category");
-        const message = document.getElementById("message");
-        message.value = "קטגוריה: " + category.options[category.selectedIndex].text + "\n\n" + message.value;
-        if (document.getElementById("email").value == "") {
-            alert("הכנס את המייל שלך.");
-            return false;
-        }
 
-        return true;
-    }
     </script>
 </body>
 </html>

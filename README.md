@@ -1,1 +1,13 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/89IMDEJr)
+# עבודה 1 - בניית אתר אישי למבוגרים בגיל השלישי  
+
+## אודות הפרויקט  
+במסגרת עבודה זו חרתי ליצור את האתר על סבתא שלי, רנה שר.  
+
+האתר כולל:  
+- מידע כללי על רנה שר  
+- שירים אהובים וגלריית תמונות 
+
+**תעודת זהות:** 209398619
+
+## קישור לאתר  
+[לחצו כאן כדי לבקר באתר ב-GitHub Pages](https://yourusername.github.io/)  

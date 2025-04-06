@@ -4,7 +4,7 @@
 **Identity Number:** 209398619
 
 ## Website Link  
-[Visit the website](https://wed-2023.github.io/209398619/)
+[Grandma Rina Scher's website](https://wed-2023.github.io/209398619/)
 
 ## Project Overview
 This website was created in honor of my grandmother, Rina Sher, who has been an inspiration to me throughout the years because of her strength and influence on our family. The website highlights her life and achievements, and offers visitors a glimpse into her personal experiences.

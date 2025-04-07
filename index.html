@@ -264,18 +264,17 @@
             
     
             <div class="intro-message" style="text-align: center;">
-                השאירו הודעה בנוגע לכל נושא ואשמח לחזור אליכם בהקדם ❤️
+                השאירו הודעה ואשמח לחזור אליכם בהקדם ❤️
             </div>
         
             <form action="mailto:kerenlond@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-                <label for="email">המייל שלך:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-        
-                <label for="message">גוף ההודעה:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <input type="text" id="name" name="name" placeholder="שם מלא" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+          
+                <input type="email" id="email" name="email" placeholder="כתובת מייל" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+          
+                <textarea id="message" name="message" rows="4" placeholder="תכתבו את ההודעה כאן" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
                 
                 <div id="emojis-container">
-                    <label>הוסף אימוג'י להודעה:</label><br>
                     <div class="emoji-grid">
                         <span class="emoji" onclick="addEmoji('😊')">😊</span>
                         <span class="emoji" onclick="addEmoji('😁')">😁</span>
